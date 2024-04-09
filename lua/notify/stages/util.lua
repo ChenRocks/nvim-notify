@@ -91,6 +91,7 @@ function M.get_slot_range(direction)
   end
   local bottom = vim.opt.lines:get()
     - (vim.opt.cmdheight:get() + (vim.opt.laststatus:get() > 0 and 1 or 0))
+  bottom = bottom - 1  -- do not block status line
   local left = 1
   local right = vim.opt.columns:get()
   if M.DIRECTION.TOP_DOWN == direction then
